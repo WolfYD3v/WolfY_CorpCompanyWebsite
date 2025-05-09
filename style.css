@@ -1,0 +1,216 @@
+body {
+    background-color: black;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem; /* Utilisation de rem */
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    font-size: 1.2rem; /* Utilisation de rem */
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+    margin-bottom: 1em; /* Utilisation de em */
+}
+
+h3 {
+    color: white;
+    font-size: 0.9rem;
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+a {
+    color: white;
+    font-size: 0.9rem;
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+strong {
+    font-size: 1.5rem;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+pre {
+    color: white;
+    font-size: 0.9rem;
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: left;
+    display: flex;
+}
+
+.licence {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: 5vh auto; /* Utilisation de vh pour la marge verticale */
+}
+
+.licencePearks,
+.licenceObligations {
+    width: 48%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    margin-bottom: 1em;
+}
+
+.licenceText {
+    color: white;
+    font-size: 1rem;
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: left;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.page-button {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.page-button a {
+    float: left;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 0.8em 1em;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.page-button a:hover {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+
+.page-button .icon {
+    display: none;
+}
+
+.pageContent {
+    max-width: 100%;
+    overflow: hidden;
+    margin-top: 3rem; /* Utilisation de rem */
+    display: block;
+}
+
+.carousel-container {
+    overflow: hidden;
+    margin: 1em auto;
+    max-width: 100%;
+    cursor: grab;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.MyGame {
+    flex: 0 0 auto;
+    width: 90vw; /* Utilisation de vw */
+    max-width: 554px;
+    margin-right: 1em;
+}
+
+.MyGame:last-child {
+    margin-right: 0;
+}
+
+.MyGame iframe {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel-controls {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.carousel-controls button {
+    background: none;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5em 1em;
+    margin: 0 0.25em;
+    cursor: pointer;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.carousel-controls button:hover {
+    background-color: #333;
+}
+
+.prevBtn {
+    left: -50px;
+}
+
+.topnav {
+    background-color: #000000;
+    overflow: hidden;
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0.8em 1em;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.topnav a:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.topnav a.active {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.topnav .icon {
+    display: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+    .licence {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 80px; /* Ajuster pour les mobiles */
+    }
+
+    .licencePearks,
+    .licenceObligations {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .MyGame {
+        width: 100%; /* Carrousel sur les très petits écrans */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .licence {
+        margin-top: 80px; /* Ajuster pour les tablettes */
+    }
+}

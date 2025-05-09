@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>WolfY_Corp Company Website</title>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Main</a>
+        <a href="project_page.html">Projets</a>
+        <a href="about_us_page.html">Informations</a>
+        <a href="licence_page.html" class="active">Licence</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    
+    <div class="pageContent">
+        <h2>A la <strong>WolfY_Corp</strong> , nous savons à tel point protéger ses droits sur ses créations est important .</h2>
+        <h2>C'est pourquoi nous avons créés notre licence , la <strong>WolfY_Corp_LICENCE</strong> . Mais que propose-t-elle ?</h2>
+        <div class="licence" id="licence">
+            <article class="licencePearks">
+                <h2>Les avantages</h2>
+                <a class="licenceText">. Une protection de la propriété intellectuelle du travail est garantie , tout en suivant les règles de l'open source .</a>
+                <a class="licenceText">. Tous projets peuvent être licenciés (Jeux , programmes , etc) .</a>
+                <a class="licenceText">. La licence est en lien direct avec la licence MIT , vous pouvez donc profiter de ses avantages (Tout en suivant les closes de notre licence) .</a>
+            </article>
+            <article class="licenceObligations">
+                <h2>Les obligations</h2>
+                <a class="licenceText">. Il est autorisé de re-distribuer le travail licencié d'autrui <strong>SI</strong> et seulement <strong>SI</strong> il a été modifié au préalable . Sinon l'acte de re-distribution est pris comme du vol .</a>
+                <a class="licenceText">. Le projet licencié <strong>DOIT</strong> être open source , et son accès <strong>DOIT</strong> être gratuit . Nos projets ne sont pas créés à but lucratif .</a>
+                <a class="licenceText">. Le projet licencié doit OBLIGATOIREMENT indiquer qu'il l'est , en mettant en tête du README.md du projet ceci :
+                    <pre>
+                        Copyright (c) 2025 [name]
+                        This project is distributed under the licence WolfY_Corp_LICENCE (check LICENSE repository).
+                    </pre>
+                </a>
+                <a class="licenceText">. Le projet licencié doit OBLIGATOIREMENT être présent dans notre incubateur pour être licencié .</a>
+            </article>
+        </div>
+        <div class="page-button">
+            <a href="licence_project_page.html">Licencier votre projet</a>
+        </div>
+        <div class="page-button">
+            <a href="https://github.com/WolfYD3v/WolfY_Corp_LICENCE">Voir la licence</a>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+
+        var y = document.getElementById("licence");
+
+        if (x.className === "topnav") {
+            x.className += " responsive";
+
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+
+<style>
+    /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+    @media screen and (max-width: 600px) {
+        .topnav a:not(:first-child) {display: none;}
+        .topnav a.icon {
+            float: right;
+            display: block;
+        }
+    }
+    
+    /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+    @media screen and (max-width: 600px) {
+        .topnav.responsive {position: relative;}
+        .topnav.responsive a.icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+    }
+</style>

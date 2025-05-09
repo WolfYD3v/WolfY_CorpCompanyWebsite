@@ -2,59 +2,76 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>WolfY_Corp Company Website</title>
-    <script src="script.js"></script>
 </head>
 <body>
-    <h2>"Creating for the open source , with the open source"<br>Our philosophy at the <strong>WolfY_Corp</strong><br></h2>
-    <h2>As a game developper myself , I know how open source is important . I use Godot , Blender , and I am the creator of the company philosophy . So I am well placed to talk about open source !</h2>
-
-    <h1>Projects created by the the patron :</h1>
-    <div class="MyGames">
-        <article class="MyGame">
-            <iframe frameborder="0" src="https://itch.io/embed/3415209?border_width=2&amp;bg_color=000000&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=333333" width="554" height="169"><a href="https://wolfy400.itch.io/destroyed">Destroyed by WolfY_D3v</a></iframe>
-        </article>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Main</a>
+        <a href="project_page.html">Projets</a>
+        <a href="about_us_page.html">Informations</a>
+        <a href="licence_page.html">Licence</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
-    <h1>Projects created by the community :</h1>
-    <h2>Not listed for now</h2>
+    
+    <div class="pageContent">
+        <h2 style="font-size: 1.9rem;">"Créer pour l'open source , avec l'open source"<br>Telle est notre philosophie à la <strong style="font-size: 2.4rem;">WolfY_Corp</strong></br></h2>
+        <h2 style="font-size: 1.5rem;text-align: left;"><u>Message du CEO :</u></h2>
+        <div style="display:flex;overflow: hidden;">
+            <h2 style="font-size: 1.2rem;text-align: left;max-width: 45%;">"Moi-même , en tant que développeur de jeux , je sais comment l'open source est important . J'utise Godot , Blender , et je suis le créateur de la philosophie de mon entreprise . Je suis donc le mieux placé pour parler de l'open source !" WolfY_D3v , CEO</h2>
+            <img src="website_images/wolfy_corp_logo.png" width="151.8em" height="142.0em">
+        </div>
+        <h2 style="font-size: 1.5rem;text-align: right;">Notre engagement , proposer un jour tout un tas d'outils pratiques et open source pour la productivité et pour le divertissement .</h2>
+        <h1 style="font-size: 3.3rem;"><u>News :</u></h1>
+        <div>
+            <h2 style="font-size: 1.3rem;text-align: left;"><em>Une ouverture sous de bonnes augures</em></h2>
+            <h2 style="font-size: 1.0rem;text-align: left;max-width: 45%;">
+                La WolfY_Corp a ouvert ses portes, et ses débuts sont plus que satisfaisants.
+                <br>Le CEO et ses employés s'épanouisent dans un espace de travail où il y fait bon vivre. Un futur radieux attend cette nouvelle boîte.</br>
+                <br>A ce jour on a plus qu'à attendre qu'elle fasse ses preuves. Mais on n'en doute pas, sa succes story ne fait que commencer.</br>
+            </h2>
+            <h2 style="font-size: 0.8rem;text-align: left;max-width: 45%;">> Numétama , 03 mai 2023 , un article rédigé par John Doe</h2>
+        </div>
+    </div>
 </body>
 </html>
 
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+
 <style>
-    body {
-        background-color : black ;
+    /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+    @media screen and (max-width: 600px) {
+        .topnav a:not(:first-child) {display: none;}
+        .topnav a.icon {
+            float: right;
+            display: block;
+        }
     }
-    h1 {
-        color : white ;
-        font-size : 40px ;
-        font-family : "Lucida Console" , "Courier New" , monospace ;
-    }
-    h2 {
-        color : white ;
-        font-size : 20px ;
-        font-family : "Lucida Console" , "Courier New" , monospace ;
-    }
-    strong {
-        font-size : 30px ;
-        font-family : "Lucida Console" , "Courier New" , monospace ;
-    }
-
-    .MyGames {
-        max-width : 554px ;
-        max-height : 169px ;
-        margin : 1em auto ;
-
-        display : table-header-group ;
-        grid-template-columns : repeat(auto-fill , minmax(554px, 1fr)) ;
-        grid-gap : 15px ;
-    }
-    .MyGame {
-        display : grid ;
-        grid-template-rows : max-content 12px 1fr ;
-    }
-    .MyGame .content {
-        padding : 0.5rem ;
+    
+    /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+    @media screen and (max-width: 600px) {
+        .topnav.responsive {position: relative;}
+        .topnav.responsive a.icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
     }
 </style>
-
-<script></script>
