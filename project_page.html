@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Chivo Mono' rel='stylesheet'>
     <title>WolfY_Corp Company Website</title>
 </head>
 <body>
@@ -12,182 +13,78 @@
         <a href="project_page.html" class="active">Projets</a>
         <a href="about_us_page.html">Informations</a>
         <a href="licence_page.html">Licence</a>
+        <a href="products_page.html">Produits</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
 
     <div class="pageContent">
-        <h1><u>Projets créés par le CEO :</u></h1>
-        <div class="carousel-container">
-            <div class="carousel">
-                <article class="MyGame">
-                    <iframe frameborder="0" src="https://itch.io/embed/3415209?border_width=2&amp;bg_color=000000&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=333333" width="554" height="169"><a href="https://wolfy400.itch.io/destroyed">Destroyed by WolfY_D3v</a></iframe>
-                    <div class="links">
-                        <a href="https://github.com/WolfYD3v/Game_Destroyed">Github repository</a>
-                    </div>
-                </article>
-                <h3>Auto projects listing is under development</h3>
-            </div>
+        <h1><u>Projets créés par la communauté :</u></h1>
+
+        <div class="grid-container">
+
+            <article class="MyGame">
+                <div class="links">
+                    <a>|[=====]|</a>
+                </div>
+            </article>
+        
         </div>
 
-        <h1><u>Projets créés par la communauté :</u></h1>
-        <h2>_community_projects_list : list = []</h2>
+        <h1><u>Projets créés par le CEO :</u></h1>
+        <div class="grid-container">
+
+            <article class="MyGame">
+                <iframe frameborder="0" src="https://itch.io/embed/3415209?linkback=true&amp;border_width=0&amp;bg_color=000000&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=000000" width="550" height="165"><a href="https://wolfy400.itch.io/destroyed">Destroyed</a></iframe>
+                <div class="links">
+                    <a>2 avril 2025 | 15h06 | </a>
+                    <a href="https://github.com/WolfYD3v/Game_Destroyed">Github repository</a>
+                </div>
+            </article>
+            
+            <article class="MyGame">
+                <iframe frameborder="0" src="https://itch.io/embed/3563321?linkback=true&amp;border_width=0&amp;bg_color=000000&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=000000" width="550" height="165"><a href="https://wolfy400.itch.io/my-pc-is-bad">My PC is bad</a></iframe>
+                <div class="links">
+                    <a>16 mai 2025 | 12h24</a>
+                </div>
+            </article>
+
+            <article class="MyGame">
+                <iframe frameborder="0" src="https://itch.io/embed/3605692?linkback=true&amp;border_width=0&amp;bg_color=000000&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=000000" width="550" height="165"><a href="https://wolfy400.itch.io/five-night-at-bloupe-pizzeria-game-series">Five Night At Bloupe Pizzeria - Game series</a></iframe>
+                <div class="links">
+                    <a>31 mai 2025 | 14h37</a>
+                </div>
+            </article>
+
+            <article class="MyGame">
+                <iframe frameborder="0" src="https://itch.io/embed/3661436?linkback=true&amp;border_width=0&amp;bg_color=000000&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=000000" width="550" height="165"><a href="https://wolfy400.itch.io/unseen-goblins">Unseen goblins</a></iframe>
+                <div class="links">
+                    <a>21 juin 2025 | 19h35 | </a>
+                    <a href="https://github.com/WolfYD3v/Unseen-goblins-Godot-project">Github repository</a>
+                </div>
+            </article>
+
+            <article class="MyGame">
+                <div class="links">
+                    <a>|[=====]|</a>
+                </div>
+            </article>
+            
+        </div>
     </div>
 </body>
 </html>
 
 <script>
-    const carouselContainer = document.querySelector('.carousel-container');
-    const carousel = document.querySelector('.carousel');
-    const articles = document.querySelectorAll('.MyGame');
-    const articleWidth = articles[0]?.offsetWidth + 15 || 0; // Inclut la marge, avec vérification si articles[0] existe
-    let currentIndex = 0;
-    let isDragging = false;
-    let startX;
-    let translateX = 0;
-    let isCarouselActive = articles.length > 2; // Variable pour suivre si le carrousel doit être actif
-
-    // Dupliquer les éléments pour l'effet infini
-    function duplicateElements() {
-        if (isCarouselActive) {
-            articles.forEach(article => {
-                carousel.appendChild(article.cloneNode(true));
-            });
-            articles.forEach(article => {
-                carousel.prepend(article.cloneNode(true));
-            });
-            translateX = -articleWidth * articles.length;
-            carousel.style.transform = `translateX(${translateX}px)`;
-            currentIndex = articles.length;
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
         } else {
-            // Si moins de 3 articles, réinitialiser le transform
-            carousel.style.transform = `translateX(0px)`;
-        }
-}
-
-    duplicateElements();
-
-    function scrollToItem(index, smooth = true) {
-        if (isCarouselActive) {
-            carousel.style.transition = smooth ? 'transform 0.3s ease-in-out' : 'none';
-            translateX = -articleWidth * index;
-            carousel.style.transform = `translateX(${translateX}px)`;
-            currentIndex = index;
+            x.className = "topnav";
         }
     }
-
-    // Désactiver les boutons si le carrousel n'est pas actif
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-
-    if (prevBtn && nextBtn) {
-        if (!isCarouselActive) {
-            prevBtn.disabled = true;
-            nextBtn.disabled = true;
-            prevBtn.style.cursor = 'default';
-            nextBtn.style.cursor = 'default';
-        } else {
-            prevBtn.disabled = false;
-            nextBtn.disabled = false;
-            prevBtn.style.cursor = 'pointer';
-            nextBtn.style.cursor = 'pointer';
-        }
-    }
-
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            scrollToItem(currentIndex + 1);
-            if (currentIndex >= articles.length * 2 - 1) {
-                setTimeout(() => scrollToItem(articles.length, false), 300);
-            }
-        });
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            scrollToItem(currentIndex - 1);
-            if (currentIndex <= 0) {
-                setTimeout(() => scrollToItem(articles.length - 1, false), 300);
-            }
-        });
-    }
-
-    carouselContainer.addEventListener('mousedown', (e) => {
-        if (!isCarouselActive) return;
-            isDragging = true;
-            startX = e.pageX - translateX;
-            carouselContainer.style.cursor = 'grabbing';
-            carousel.style.transition = 'none'; // Désactiver la transition pendant le drag
-    });
-
-    carouselContainer.addEventListener('mouseleave', () => {
-        if (!isCarouselActive) return;
-        isDragging = false;
-        carouselContainer.style.cursor = 'grab';
-        carousel.style.transition = 'transform 0.3s ease-in-out'; // Réactiver la transition
-    });
-
-    carouselContainer.addEventListener('mouseup', () => {
-        if (!isCarouselActive) return;
-            isDragging = false;
-            carouselContainer.style.cursor = 'grab';
-            carousel.style.transition = 'transform 0.3s ease-in-out'; // Réactiver la transition
-    });
-
-    carouselContainer.addEventListener('mousemove', (e) => {
-        if (!isCarouselActive || !isDragging) return;
-            e.preventDefault();
-            const x = e.pageX;
-            translateX = x - startX;
-            carousel.style.transform = `translateX(${translateX}px)`;
-    });
-
-    carouselContainer.addEventListener('wheel', (e) => {
-        if (!isCarouselActive) {
-            e.preventDefault(); // Empêcher le défilement par défaut si le carrousel est inactif
-            return;
-            }
-        e.preventDefault();
-        console.log("Événement wheel détecté:", e.deltaY);
-        translateX += e.deltaY;
-        carousel.style.transform = `translateX(${translateX}px)`;
-        console.log("Nouvelle valeur de translateX:", translateX);
-
-        // Gestion de la transition infinie pour la molette
-        const limitRight = -articleWidth * (articles.length * 2 - 1);
-        const limitLeft = 0;
-
-        // Si on dépasse la fin et qu'on continue de scroller à droite
-        if (translateX < limitRight - 50) { // Petite marge pour déclencher avant la fin visuelle
-            carousel.style.transition = 'none';
-            translateX += articleWidth * articles.length;
-            carousel.style.transform = `translateX(${translateX}px)`;
-        }
-        // Si on dépasse le début et qu'on continue de scroller à gauche
-        else if (translateX > limitLeft + 50) { // Petite marge pour déclencher avant le début visuel
-            carousel.style.transition = 'none';
-            translateX -= articleWidth * articles.length;
-            carousel.style.transform = `translateX(${translateX}px)`;
-        } else {
-            carousel.style.transition = 'transform 0.3s ease-in-out'; // Réactiver la transition
-        }
-    }, { passive: false });
-
-    carousel.addEventListener('transitionend', () => {
-        if (!isCarouselActive) return;
-        if (currentIndex <= 0) {
-            carousel.style.transition = 'none';
-            translateX = -articleWidth * articles.length;
-            carousel.style.transform = `translateX(${translateX}px)`;
-            currentIndex = articles.length;
-        } else if (currentIndex >= articles.length * 2 - 1) {
-            carousel.style.transition = 'none';
-            translateX = -articleWidth * (articles.length - 1);
-            carousel.style.transform = `translateX(${translateX}px)`;
-            currentIndex = articles.length - 1;
-        }
-    });
 </script>
 
 <script>

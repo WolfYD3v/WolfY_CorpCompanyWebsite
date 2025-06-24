@@ -1,50 +1,55 @@
 body {
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     overflow-x: hidden;
 }
 
 h1 {
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 2.5rem; /* Utilisation de rem */
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: 'Chivo Mono';
     text-align: center;
 }
 
 h2 {
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 1.2rem; /* Utilisation de rem */
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: 'Chivo Mono';
     text-align: center;
     margin-bottom: 1em; /* Utilisation de em */
 }
 
 h3 {
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 0.9rem;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: 'Chivo Mono';
     text-align: center;
     margin-bottom: 1em;
 }
 
 a {
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 0.9rem;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: 'Chivo Mono';
     text-align: center;
     margin-bottom: 0.5em;
 }
 
 strong {
     font-size: 1.5rem;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: 'Chivo Mono';
 }
 
 pre {
-    color: white;
-    font-size: 0.9rem;
-    font-family: "Lucida Console", "Courier New", monospace;
+    color: rgb(255, 255, 255);
+    font-size: 0.5rem;
+    font-family: 'Chivo Mono';
+    max-width: 100%;
     text-align: left;
     display: flex;
+}
+
+img {
+    border: 0.3rem solid black;
 }
 
 .licence {
@@ -60,14 +65,15 @@ pre {
     width: 48%;
     border-style: solid;
     border-width: 2px;
-    border-color: white;
+    border-color: rgb(0, 0, 0);
+    background-color: black;
     margin-bottom: 1em;
 }
 
 .licenceText {
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 1rem;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: 'Chivo Mono';
     text-align: left;
     margin-bottom: 0.5em;
     display: block;
@@ -81,8 +87,8 @@ pre {
 }
 .page-button a {
     float: left;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #000000;
+    color: #ffffff;
     text-align: center;
     padding: 0.8em 1em;
     text-decoration: none;
@@ -90,8 +96,8 @@ pre {
 }
 
 .page-button a:hover {
-    background-color: #000000;
-    color: rgb(255, 255, 255);
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
 }
 
 .page-button .icon {
@@ -105,57 +111,34 @@ pre {
     display: block;
 }
 
-.carousel-container {
-    overflow: hidden;
-    margin: 1em auto;
-    max-width: 100%;
-    cursor: grab;
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Crée 2 colonnes de largeur égale */
+    grid-template-rows: repeat(3, auto); /* Crée 2 lignes avec une hauteur automatique */
+    gap: 1em; /* Ajoute un espacement d'1em entre les éléments de la grille */
+    margin: 1em auto; /* Centre la grille et ajoute une marge */
+    max-width: 100%; /* Adapte la largeur maximale de ta grille */
+    padding: 0 1em; /* Ajoute un peu de padding pour éviter que les éléments ne collent aux bords */
 }
 
 .MyGame {
-    flex: 0 0 auto;
-    width: 90vw; /* Utilisation de vw */
-    max-width: 554px;
-    margin-right: 1em;
-}
-
-.MyGame:last-child {
-    margin-right: 0;
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .MyGame iframe {
     width: 100%;
-    height: auto;
+    height: auto; /* L'auto est bon pour maintenir les proportions */
     display: block;
+    /* Ajoute une hauteur min/max si nécessaire pour uniformiser les iframes */
+    min-height: 167px; /* Exemple, ajuste selon tes besoins */
 }
 
-.carousel-controls {
-    text-align: center;
-    margin-top: 1em;
-}
-
-.carousel-controls button {
-    background: none;
-    color: white;
-    border: 1px solid white;
-    padding: 0.5em 1em;
-    margin: 0 0.25em;
-    cursor: pointer;
-    font-family: "Lucida Console", "Courier New", monospace;
-}
-
-.carousel-controls button:hover {
-    background-color: #333;
-}
-
-.prevBtn {
-    left: -50px;
-}
 
 .topnav {
     background-color: #000000;
@@ -168,9 +151,9 @@ pre {
 
 .topnav a {
     float: left;
-    color: #f2f2f2;
+    color: #ffffff;
     text-align: center;
-    padding: 0.8em 1em;
+    padding: 0.8em 0.8em;
     text-decoration: none;
     font-size: 1rem;
 }
